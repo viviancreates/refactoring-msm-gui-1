@@ -63,7 +63,7 @@
     </label>
 
      <% if @the_movie.director != nil %>
-      <%= the_director_id = "" %>
+      <%= the_director_id = "@the_movie.director.name" %>
       <% else %>
       <%= the_director_id = "" %>
       <% end %>
