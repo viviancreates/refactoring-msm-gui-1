@@ -62,7 +62,12 @@
       Director ID
     </label>
 
-    <input type="text" id="director_id_box" name="query_director_id" value="<%= @the_movie.director_id %>">
+     <% if @the_movie.director != nil %>
+      <%= the_director_id = "" %>
+      <% else %>
+      <%= the_director_id = "" %>
+      <% end %>
+    <input type="text" id="director_id_box" name="query_director_id" value="<%= the_director_id %>">
   </div>
 
   <button>
@@ -112,8 +117,11 @@
     Director
   </dt>
   <dd>
-   <%= @the_movie.director.name %>
-
+  <% if @the_movie.director != nil %>
+  <%= @the_movie.director.name %>
+  <% else %>
+  Uh oh! We aren't able to find the director for this movie.
+  <% end %>
     
   </dd>
 
